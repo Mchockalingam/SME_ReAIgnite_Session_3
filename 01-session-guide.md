@@ -38,7 +38,6 @@ Do not moralise here. Nobody in the room is careless. The point is that a reliab
 ---
 
 # Module 1 — Why review broke: the throughput asymmetry
-**00:05 – 00:15 (10 min)**
 
 ## 1.1 The arithmetic nobody wants to do
 
@@ -55,9 +54,6 @@ Put the numbers on screen from your own org if you have them. If you do not, use
 
 The capacity line is flat. It was always going to be flat. That is the whole story.
 
-### Anecdote hook (facilitator: verify before use)
-The Heitor Lessa interview referenced for this session opens on a refactor that burned roughly 200 million tokens before he concluded the approach was wrong and rebuilt his SDLC around agents. Use it as the emotional anchor: the failure was not the model, it was running an old process at new speed. *Watch the video before delivery and replace this paragraph with your own takeaways.*
-
 ## 1.2 Three functions of code review, and what happened to each
 
 Code review has been doing four jobs for decades. Machine authorship damages three of them in different ways.
@@ -69,13 +65,6 @@ Most regulated organisations use code review as a control to satisfy ISO, IEC, N
 The consequence: **AI makes the organisation faster everywhere except at the one gate the regulator cares about.** You have built a wider road that ends in the same toll booth.
 
 Breck's expectation — and it is worth stating as an expectation, not a fact — is that audit regimes will eventually shift from "prove a human reviewed this" to "prove a qualified set of AI tools audited this", and that standards may eventually mandate specific models as controls. That would be more standardised and more rigorous than today's practice. But it has not happened. **Right now you are still personally accountable for code you author and code you approve.**
-
-What you can do today:
-- Work in increments a human can actually hold in their head. A 50,000-line PR is not reviewable, and pretending otherwise is a compliance fiction.
-- Note the trap: simply making PRs smaller does not fix it, because agents generate small PRs fast enough to swamp humans anyway. Volume moves, the bottleneck does not.
-- Use AI review inside the PR pipeline for triage and inconsistency-spotting, which it is genuinely good at.
-- Use AI conversationally as a *comprehension aid* — ask the model questions about the diff you are reviewing.
-- Pair or mob on requirements and prompt the agent together. Shared context up front makes the eventual review dramatically cheaper.
 
 ### (b) Knowledge sharing
 
@@ -89,9 +78,7 @@ Partial compensations that are working for people:
 
 Nothing has beaten regularly meeting as a team to talk through design choices and trade-offs. Breck cites the TigerBeetle team's *walking design reviews* — everyone on a phone call, walking, holding the design in their head, no slides and no body language to read. The constraint forces concentration and active listening.
 
-**Discussion prompt (60 seconds, table talk):** *What has your team actually lost in the last six months that you did not notice losing?*
-
-### (c) Quality and abstraction — the open question
+### (c) Quality and abstraction
 
 Agents are already good at convention-following, test generation, edge-case enumeration and considering alternatives, and they are improving. What they still do inconsistently is find the *right abstraction*. They satisfy the stated constraint and miss the generalisation a good engineer would have seen.
 
@@ -111,14 +98,12 @@ Three architectural consequences, and these are the ones to write down:
 
 And: defence in depth was always important. In a world where discovery, development and exploitation are all accelerated, it becomes the single most important property to review for.
 
-## 1.3 Module 1 close
 
 > The bottleneck moved from *writing* to *verifying*. Everything in the rest of this session is about industrialising verification.
 
 ---
 
 # Module 2 — Seven ways machine code fails differently
-**00:15 – 00:30 (15 min)**
 
 Run this as a rapid-fire pattern gallery. One slide per failure mode, one code sample, one "what to check". Attendees should be able to name all seven by the end.
 
@@ -212,12 +197,9 @@ Not all machine output deserves equal scrutiny.
 | **T2 — Validated by independent AI review** | A separate review harness already scanned for hallucinations, test quality, convention drift | Human time goes only to architecture, domain correctness, and whether the change should exist at all. |
 | **T3 — Formally constrained** | Behaviour pinned by property tests, model checking, or deterministic simulation | Review the *specification*, not the implementation. |
 
-**Exercise (3 min, pairs):** *Where does your last merged AI PR sit? Be honest. Most rooms discover they are running T0 output through a T2 review posture.*
-
 ---
 
 # Module 3 — The VERDICT framework and the 5-gate pipeline
-**00:30 – 00:50 (20 min)**
 
 Full specification, all rationale, and the complete code are in `02-framework-and-implementation.md`. In the room, teach the shape.
 
@@ -310,11 +292,9 @@ Say this explicitly because teams get it wrong:
 ---
 
 # Module 4 — Implementation walkthrough
-**00:50 – 01:10 (20 min)**
-
 Code in `02-framework-and-implementation.md`. Walk the room through five artefacts. Do not read the code aloud — show it, explain the shape, move.
 
-## 4.1 The context engine (5 min)
+## 4.1 The context engine
 
 The strongest determinant of AI review quality is not the model. It is the context.
 
@@ -329,13 +309,13 @@ diff · changed-file full contents · resolved symbol table · dependency lockfi
 · ADRs touching changed paths · recent incidents in changed paths · trust tier
 ```
 
-## 4.2 The grounding checker (4 min)
+## 4.2 The grounding checker
 
 Show `grounding_check.py`. This is the highest-ROI piece of code in the pack: it is deterministic, it costs nothing per run, and it eliminates the single most common agent failure mode.
 
 Mechanism: parse the AST of changed files, extract every import and attribute access, resolve each against the installed environment and lockfile, and fail the build on anything unresolvable. No model involved, no false-positive budget to manage.
 
-## 4.3 The multi-agent review orchestrator (5 min)
+## 4.3 The multi-agent review orchestrator
 
 Show `orchestrator.py`. Key design decisions to call out:
 
@@ -345,7 +325,7 @@ Show `orchestrator.py`. Key design decisions to call out:
 - **The model never decides merge.** It emits findings. A deterministic policy function reads findings and decides.
 - **Noise control is a first-class feature.** Confidence threshold, dedupe by fingerprint, suppression file, per-PR cap. False positives are the number one reason teams stop reading AI review comments, and a reviewer nobody reads is worse than no reviewer.
 
-## 4.4 `AGENT.md` versus `SKILL.md` — the distinction to get right (5 min)
+## 4.4 `AGENT.md` versus `SKILL.md` — the distinction to get right
 
 This is the part attendees will ask about most. Frame it as **standing orders versus field manual**.
 
@@ -388,7 +368,7 @@ This is the part attendees will ask about most. Frame it as **standing orders ve
 
 Full worked examples: `03-AGENT.md` and `04-SKILL.md`.
 
-## 4.5 Live demo (5 min)
+## 4.5 Live demo
 
 Run the pipeline against a seeded PR. Script:
 
@@ -415,7 +395,6 @@ Talking point while it runs: *notice that by the time a human is involved, four 
 ---
 
 # Module 5 — Tooling: open source, commercial, and how to choose
-**00:10 – 01:20 (10 min)**
 
 Detail lives in `05-tooling-landscape.md` and `06-selection-and-customization.md`. In the room, cover three things.
 
@@ -458,7 +437,6 @@ Is your differentiator domain-specific correctness (regulated, safety, financial
 ---
 
 # Module 6 — Adoption roadmap and honest metrics
-**01:20 – 01:27 (7 min)**
 
 ## 6.1 Ninety-day rollout
 
@@ -490,7 +468,6 @@ Add two more that matter operationally:
 ---
 
 # Module 7 — Close, commitments, Q&A
-**01:27 – 01:30 (3 min)**
 
 ## The five things to remember
 
@@ -532,20 +509,3 @@ Deciding what should exist, what "correct" means, and where the system must neve
 
 ---
 
-## Appendix A — Facilitator timing card
-
-| Module | Start | Length | Hard stop if running late |
-|---|---|---|---|
-| M0 Cold open | 00:00 | 5 | Never cut — it earns the room |
-| M1 Why review broke | 00:05 | 10 | Cut 1.2(b) knowledge sharing to 2 min |
-| M2 Seven failure modes | 00:15 | 15 | Never cut — this is the core |
-| M3 VERDICT + gates | 00:30 | 20 | Cut 3.4 security detail, cover in handout |
-| M4 Implementation | 00:50 | 20 | Cut 4.5 live demo; show recording |
-| M5 Tooling | 01:10 | 10 | Cut to the decision path only |
-| M6 Roadmap + metrics | 01:20 | 7 | Cut to metrics 2 and 3 only |
-| M7 Close | 01:27 | 3 | Never cut the commitment round |
-
-## Appendix B — If you only have 45 minutes
-
-M0 (5) → M2 (15) → M3.2/3.3 VERDICT + gates (12) → M4.4 AGENT.md vs SKILL.md (8) → M7 close (5).
-Drop tooling and roadmap to the handout entirely.
