@@ -20,7 +20,6 @@ export async function validatePaymentRequest(body: unknown): Promise<PaymentRequ
 }
 ```
 
-### The reveal
 
 Ask: *"Who would approve this?"* Most hands go up. Then:
 
