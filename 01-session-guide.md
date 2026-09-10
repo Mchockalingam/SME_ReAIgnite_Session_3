@@ -32,8 +32,6 @@ Ask: *"Who would approve this?"*
 
 > This is the whole problem. Human code quality correlates with surface quality. Machine code breaks that correlation. The model optimises for patterns it saw in high-quality training data, so the surface is *always* good — and pattern matching is not understanding.
 
-*(This example and the correlation-breaking argument are drawn from Eddie Wang's checklist on the Tenki blog.)*
-
 ### Speaker note
 Do not moralise here. Nobody in the room is careless. The point is that a reliable instrument has become unreliable, and instruments that quietly stop working are more dangerous than instruments that visibly break.
 
@@ -79,7 +77,7 @@ What you can do today:
 - Use AI conversationally as a *comprehension aid* — ask the model questions about the diff you are reviewing.
 - Pair or mob on requirements and prompt the agent together. Shared context up front makes the eventual review dramatically cheaper.
 
-### (b) Knowledge sharing — the quiet loss
+### (b) Knowledge sharing
 
 Some teams expect everyone to read every PR, including ones merged while they were on holiday, so the whole team's mental model stays current. At agent throughput that is impossible even on small teams.
 
