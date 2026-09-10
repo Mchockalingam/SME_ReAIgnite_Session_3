@@ -215,20 +215,4 @@ asymmetry is the whole reason both file types exist. Every line you move from
 | Worked examples of good and bad findings | `SKILL.md` | Long; only useful in context |
 | Finding output JSON schema | `SKILL.md` reference file | Long; loaded only when emitting findings |
 
-### Six anti-patterns to avoid
 
-1. **The kitchen sink.** Everything anyone ever wanted the agent to know, in one
-   file. It stops being read. Split it.
-2. **Unenforceable prose.** "Write clean, maintainable code" changes nothing.
-   "All handlers return `Result[T, AppError]`; see `semgrep/no-raw-raise.yaml`"
-   changes behaviour and is mechanically checkable.
-3. **Duplication across the two files.** The moment your `SKILL.md` restates your
-   tech stack, the two files begin to drift and one of them becomes a lie. Skills
-   should assume `AGENT.md` is loaded and reference it.
-4. **Documenting the obvious.** "Use meaningful variable names" wastes context
-   the model does not need. Document what is *surprising* about your codebase.
-5. **Never updating it.** When a convention changes, the PR that changes it must
-   change `AGENT.md`. These files are code. Review them like code.
-6. **No "stop" conditions.** An `AGENT.md` that tells an agent what to do but
-   never what to refuse produces confident work on ambiguous requirements —
-   which is exactly failure mode 6. Section 11 is not optional.
