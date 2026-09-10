@@ -1,7 +1,7 @@
 
 ## The situation we are actually in
 
-Sometime in the last eighteen months, most of us stopped writing the majority of our code. We describe, an agent produces, we skim, we merge. The velocity gain has been real and nobody wants to give it back.
+Sometime in the last few months, most of us stopped writing the majority of our code. We describe, an agent produces, we skim, we merge. The velocity gain has been real and nobody wants to give it back.
 
 What has not changed is the number of hours in a day that a human being can spend carefully reading code.
 
