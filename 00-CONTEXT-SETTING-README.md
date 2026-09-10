@@ -1,9 +1,3 @@
-# Before We Start
-## Reviewing What the Machine Wrote — a 5-minute context setter
-
-**Read this before the session. It takes five minutes and it will make the ninety that follow land properly.**
-
----
 
 ## The situation we are actually in
 
@@ -21,13 +15,13 @@ This session is about what to do about that.
 
 You have spent years building a reliable sense for bad code. Messy formatting means someone was rushing. Odd variable names mean inexperience. A large diff with no tests means corners were cut. Those heuristics work because, for human authors, surface quality tracks care.
 
-Machine-written code breaks that link completely. A model produces well-formatted, well-named, well-commented code with comprehensive-looking tests — because it is reproducing patterns from high-quality training data. The surface is always good. The surface tells you *nothing* about whether the logic underneath is right.
+Machine written code breaks that link completely. A model produces well formatted, well named, well commented code with comprehensive looking tests, because it is reproducing patterns from high quality training data. The surface is always good. The surface tells you *nothing* about whether the logic underneath is right.
 
-So the failure mode is not "the AI writes bad code." It is:
+So the failure mode is not "the AI writes bad code."
 
 > **The AI writes code that looks so good you stop scrutinising it.**
 
-Human code fails loudly and looks bad. Machine code fails quietly and looks great. You are no longer scanning for sloppiness. You are scanning for plausible-looking wrongness, and that is a different skill.
+Human code fails loudly and looks bad. Machine code fails quietly and looks great. You are no longer scanning for sloppiness. You are scanning for plausible looking wrongness, and that is a different skill.
 
 ---
 
@@ -44,8 +38,6 @@ Nobody in that story was careless. A reliable instrument stopped working, and in
 ---
 
 ## What we will cover
-
-Ninety minutes, seven modules.
 
 1. **Why review broke** — the throughput asymmetry, and what it does to the four jobs code review has always done: compliance, knowledge sharing, quality, security.
 2. **Seven ways machine code fails differently** — hallucinated APIs, tautological tests, cargo-culted patterns, over-abstraction, missing edge cases, confidently wrong business logic, stale dependencies. With live examples.
