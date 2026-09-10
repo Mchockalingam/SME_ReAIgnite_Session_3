@@ -26,8 +26,6 @@ Ask: *"Who would approve this?"*
 - `@openapi/validator` does not export `validateSchema`. The real export is `validateOpenAPISchema`. The model reproduced an API shape from an older version in its training data.
 - The tests pass because the test file mocks the module.
 - Coverage went **up**.
-- 
-
 
 > This is the whole problem. Human code quality correlates with surface quality. Machine code breaks that correlation. The model optimises for patterns it saw in high-quality training data, so the surface is *always* good — and pattern matching is not understanding.
 
