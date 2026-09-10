@@ -187,26 +187,9 @@ If you build your own reviewer (as in `02-framework-and-implementation.md`):
 
 ---
 
-## Part 4 — Reading benchmarks without being fooled
-
+## Part 4 — Reading benchmarks
 For most of this category's life, every published benchmark was won by whoever
 published it. Greptile's benchmark had Greptile winning at 82% bug catch. CodeRabbit's
 had CodeRabbit winning. Qodo's had Qodo winning. All three are probably honest and
 all three are unusable for a purchasing decision.
 
-**Three questions to ask of any benchmark:**
-
-1. **Who paid for it?** The Martian Code Review Bench matters precisely because
-   Martian does not sell a review tool.
-2. **Does it report precision, or only recall?** A benchmark that reports "caught
-   82% of bugs" and does not publish per-tool false-positive counts has measured
-   half the problem. A tool that comments on everything catches everything.
-3. **What is the outcome metric?** "Bugs found" is gameable. "Comments developers
-   acted on" is not.
-
-**The honest state of the field:** nobody is winning on signal-to-noise. False
-positives remain the number one complaint across every tool in this category.
-Assume you will spend real engineering time tuning, whatever you buy.
-
-**And the only benchmark that decides anything is the one you run on your own
-repository.** Protocol in `06-selection-and-customization.md` §2.
