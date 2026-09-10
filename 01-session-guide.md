@@ -1,7 +1,6 @@
 # Reviewing What the Machine Wrote
 
-# Module 0 — Cold open: the PR that looked perfect
-**00:00 – 00:05 (5 min)**
+# Module 0
 
 ### Slide: one diff, no commentary
 
