@@ -58,7 +58,7 @@ Most regulated organisations use code review as a control to satisfy ISO, IEC, N
 
 The consequence: **AI makes the organisation faster everywhere except at the one gate the regulator cares about.** You have built a wider road that ends in the same toll booth.
 
-Breck's expectation — and it is worth stating as an expectation, not a fact — is that audit regimes will eventually shift from "prove a human reviewed this" to "prove a qualified set of AI tools audited this", and that standards may eventually mandate specific models as controls. That would be more standardised and more rigorous than today's practice. But it has not happened. **Right now you are still personally accountable for code you author and code you approve.**
+Audit regimes will eventually shift from "prove a human reviewed this" to "prove a qualified set of AI tools audited this", and that standards may eventually mandate specific models as controls. That would be more standardised and more rigorous than today's practice. But it has not happened. **Right now you are still personally accountable for code you author and code you approve.**
 
 ### (b) Knowledge sharing
 
