@@ -21,7 +21,7 @@ export async function validatePaymentRequest(body: unknown): Promise<PaymentRequ
 ```
 
 
-Ask: *"Who would approve this?"* Most hands go up. Then:
+Ask: *"Who would approve this?"*
 
 - `@openapi/validator` does not export `validateSchema`. The real export is `validateOpenAPISchema`. The model reproduced an API shape from an older version in its training data.
 - The tests pass because the test file mocks the module.
