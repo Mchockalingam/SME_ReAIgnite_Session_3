@@ -45,7 +45,6 @@ Nobody in that story was careless. A reliable instrument stopped working, and in
 4. **The implementation** — actual code you can lift: the grounding checker, the mutation gate, the multi-agent reviewer, and the split between `AGENT.md` and `SKILL.md`.
 5. **Tooling** — open source versus commercial, and how to run a bake-off that tells you something a vendor demo cannot.
 6. **Rollout and metrics** — ninety-day plan, and the numbers that reveal whether your team is calibrating well or quietly surrendering.
-7. **Close** — three things to do this week.
 
 ---
 
