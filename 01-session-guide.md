@@ -48,7 +48,7 @@ Put the numbers on screen from your own org if you have them. If you do not, use
 
 The capacity line is flat. It was always going to be flat. That is the whole story.
 
-## 1.2 Three functions of code review, and what happened to each
+## 1.2 Four functions of code review, and what happened to each
 
 Code review has been doing four jobs for decades. Machine authorship damages three of them in different ways.
 
