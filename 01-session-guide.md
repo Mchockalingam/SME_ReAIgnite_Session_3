@@ -110,7 +110,7 @@ The model calls a method that does not exist, imports from a package renamed two
 
 **This is fully automatable.** Gate 2 of our pipeline does exactly this. Do not spend human attention here.
 
-### 2. Tests that assert tautologies
+### 2. Tests that assert repitions
 The agent writes tests, the tests pass, coverage rises, everyone relaxes. But the assertions mirror the implementation, or the mock is configured to return precisely what the assertion expects — so the test is testing the mock.
 
 ```typescript
