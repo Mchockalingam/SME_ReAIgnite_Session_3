@@ -166,7 +166,7 @@ Training cutoffs mean models favour what was popular when the data was collected
 
 ---
 
-## 2.1 The division of labour — the most important slide in this session
+## 2.1 The division of labour — the most important section in this session
 
 | # | Failure mode | Owner | Mechanism |
 |---|---|---|---|
