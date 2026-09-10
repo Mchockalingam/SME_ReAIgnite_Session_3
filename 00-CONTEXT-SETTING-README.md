@@ -40,7 +40,7 @@ Nobody in that story was careless. A reliable instrument stopped working, and in
 ## What we will cover
 
 1. **Why review broke** — the throughput asymmetry, and what it does to the four jobs code review has always done: compliance, knowledge sharing, quality, security.
-2. **Seven ways machine code fails differently** — hallucinated APIs, tautological tests, cargo-culted patterns, over-abstraction, missing edge cases, confidently wrong business logic, stale dependencies. With live examples.
+2. **Seven ways machine code fails differently** — hallucinated APIs, repetitive tests, cargo-culted patterns, over-abstraction, missing edge cases, confidently wrong business logic, stale dependencies. With live examples.
 3. **A framework** — VERDICT, and a five-gate pipeline that makes each check cheaper than the one after it.
 4. **The implementation** — actual code you can lift: the grounding checker, the mutation gate, the multi-agent reviewer, and the split between `AGENT.md` and `SKILL.md`.
 5. **Tooling** — open source versus commercial, and how to run a bake-off that tells you something a vendor demo cannot.
