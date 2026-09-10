@@ -203,7 +203,7 @@ Full specification, all rationale, and the complete code are in `02-framework-an
 
 Coding agents are optimised to *produce* code. A review harness is optimised to *surface risk* in code. These are different objective functions and you should not ask one system to do both.
 
-The DeepLearning.AI/Qodo lesson demonstrates this concretely: asking Codex to review its own PR surfaced one real correctness bug — a capture endpoint that could still capture a payment in `under_review` status. An independent review harness on the identical PR found that same bug **plus** docstring-standard violations and breaking changes for downstream consumers. One useful AI comment is not a review.
+AskCodex to review its own PR surfaced one real correctness bug — a capture endpoint that could still capture a payment in `under_review` status. An independent review harness on the identical PR found that same bug **plus** docstring-standard violations and breaking changes for downstream consumers. One useful AI comment is not a review.
 
 Corollary: run a **pre-PR review** locally with your coding agent first, fix what it finds, *then* open the PR for the independent harness and for humans. In the demo shown in that lesson the same change went from nine findings to three after a local cleanup pass. Human attention is the most expensive resource in the system — do not spend it on things a local agent could have removed.
 
