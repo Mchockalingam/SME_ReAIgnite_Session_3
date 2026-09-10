@@ -1,25 +1,4 @@
 # Reviewing What the Machine Wrote
-## AI Code Review Essentials — 90-minute session guide
-
-**Delivered by:** Senior Technical Architect
-**Audience:** Senior engineers, tech leads, engineering managers, security champions
-**Format:** 90 minutes, 7 modules, 2 live demos, 2 group exercises
-**Outcome:** Every attendee leaves with a concrete review pipeline design, an `AGENT.md` and `SKILL.md` starting point, and a tool decision path.
-
----
-
-## Learning objectives
-
-By the end of this session, participants can:
-
-1. Explain why the traditional code-review heuristics fail on machine-written code.
-2. Identify the seven characteristic failure modes of agent-generated code in a live diff.
-3. Apply the **VERDICT** framework and the **5-gate pipeline** to their own repository.
-4. Decide what belongs in an `AGENT.md` versus a `SKILL.md`, and write both.
-5. Evaluate open-source and commercial AI code review tools against a scored rubric.
-6. Instrument the review process with metrics that reveal cognitive surrender.
-
----
 
 # Module 0 — Cold open: the PR that looked perfect
 **00:00 – 00:05 (5 min)**
