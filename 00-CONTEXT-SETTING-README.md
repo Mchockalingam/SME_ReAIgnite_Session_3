@@ -25,7 +25,7 @@ Human code fails loudly and looks bad. Machine code fails quietly and looks grea
 
 ---
 
-## A worked example, so this is concrete
+## An Example
 
 Here is a real shape of failure. A PR adds request validation to a payments endpoint. Forty-eight lines. Fourteen green checks. Coverage up four points. Clean naming, sensible structure, a docstring.
 
