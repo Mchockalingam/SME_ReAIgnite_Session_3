@@ -4,7 +4,6 @@
 
 ### Slide: one diff, no commentary
 
-Put this on screen. Say nothing for thirty seconds. Let them read it.
 
 ```typescript
 // PR #4127 — "feat: add OpenAPI request validation to /payments"
