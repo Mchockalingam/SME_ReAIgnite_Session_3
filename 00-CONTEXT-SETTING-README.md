@@ -59,37 +59,4 @@ Nobody in that story was careless. A reliable instrument stopped working, and in
 
 ---
 
-## What to bring
 
-**One AI-generated PR from the last month that you merged without reviewing deeply.** Not to shame anyone — everyone in the room has one, including whoever is presenting. We will use them in the closing exercise. Have it open in a tab.
-
-Optionally, be ready to answer three questions about your team:
-
-- Roughly what proportion of merged code is machine-authored now?
-- What is your post-merge defect rate, and can you split it by author type?
-- When did someone last write a ticket with three or more acceptance criteria?
-
-If you cannot answer the second one, that is itself a finding, and it is where module six starts.
-
----
-
-## What you will leave with
-
-- A named taxonomy for how machine code fails, so you can spot it in a diff
-- A gate-by-gate pipeline design you can apply to your own repository
-- Working code: grounding checker, mutation gate, multi-agent reviewer, policy file
-- A reference `AGENT.md` and `SKILL.md`, and a clear rule for what belongs in each
-- A scored rubric for choosing tools, and a bake-off protocol
-- Six metrics that tell you whether your review process is real or ceremonial
-
----
-
-## One question to hold in your head
-
-Think of the last PR you approved that an agent wrote.
-
-**Did you approve it because you checked it — or because everything was green?**
-
-Be honest with yourself about the answer. That gap is the entire subject of this session, and closing it is neither about working harder nor about trusting the machine less. It is about moving the checks a machine can do reliably onto a machine, so that your attention lands only where it is genuinely irreplaceable: abstraction, edge cases, domain correctness, and the small number of places where the system must never, ever be wrong.
-
-See you in the session.
